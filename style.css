@@ -530,3 +530,73 @@ h2 i {
     font-size: 15px;
   }
 }
+#menu {
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .navbar {
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    width: 220px;
+    background: rgba(15, 12, 41, 0.95);
+    border-radius: 16px;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  #menu:checked ~ .nav-links {
+    display: flex;
+  }
+
+  .nav-btn {
+    display: none;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 38px;
+  }
+
+  .hero-box {
+    width: 200px;
+    height: 260px;
+  }
+
+  .about-edu {
+    flex-direction: column;
+  }
+
+  .projects-container,
+  .cert-container,
+  .activities-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
