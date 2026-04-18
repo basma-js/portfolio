@@ -17,7 +17,7 @@ body {
 
 section {
   padding: 80px 20px;
-  scroll-margin-top: 110px;
+  scroll-margin-top: 120px;
   animation: fadeUp 0.8s ease forwards;
 }
 
@@ -81,6 +81,10 @@ section {
 
 .nav-links a:hover::after {
   width: 100%;
+}
+
+.desktop-nav {
+  display: flex;
 }
 
 .nav-btn {
@@ -511,10 +515,121 @@ h2 i {
   font-size: 22px;
   transition: 0.3s;
 }
-
+ 
 .cta-icons a:hover {
   transform: translateY(-6px);
   background: rgba(255,255,255,0.2);
+}
+
+
+.mobile-menu {
+  display: none;
+}
+
+.menu-icon {
+  list-style: none;
+  cursor: pointer;
+  font-size: 28px;
+  color: white;
+}
+
+.menu-icon::-webkit-details-marker {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 48px;
+  }
+
+  .sub-title {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .desktop-nav,
+  .nav-btn {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .menu-icon {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .mobile-menu .nav-links {
+    display: none;
+  }
+
+  .mobile-menu[open] .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 15px;
+    padding: 20px;
+    background: rgba(10, 8, 40, 0.96);
+    border-radius: 20px;
+  }
+
+  .mobile-menu .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-desc {
+    margin: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .about-edu {
+    flex-direction: column;
+  }
+
+  .hero-box {
+    width: 220px;
+    height: 260px;
+  }
+
+  .projects-container,
+  .cert-container,
+  .activities-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media (max-width: 576px) {
@@ -529,74 +644,38 @@ h2 i {
   .cta-box p {
     font-size: 15px;
   }
-}
-#menu {
-  display: none;
-}
 
-.menu-toggle {
-  display: none;
-}
-
-@media (max-width: 768px) {
-
-  .navbar {
-    position: relative;
-  }
-
-  .menu-toggle {
-    display: block;
-    font-size: 26px;
-    color: white;
-    cursor: pointer;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 80px;
-    right: 20px;
-    width: 220px;
-    background: rgba(15, 12, 41, 0.95);
-    border-radius: 16px;
-    padding: 20px;
-    display: none;
-    flex-direction: column;
-    gap: 18px;
-    align-items: center;
-    z-index: 1000;
-  }
-
-  #menu:checked ~ .nav-links {
-    display: flex;
-  }
-
-  .nav-btn {
-    display: none;
-  }
-
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
+  .hero {
+    padding: 20px 15px 60px;
   }
 
   .hero-text h1 {
     font-size: 38px;
   }
 
-  .hero-box {
-    width: 200px;
-    height: 260px;
+  .sub-title {
+    font-size: 18px;
   }
 
-  .about-edu {
-    flex-direction: column;
+  .hero-desc {
+    font-size: 16px;
   }
 
-  .projects-container,
-  .cert-container,
-  .activities-container {
-    flex-direction: column;
-    align-items: center;
+  .btn {
+    width: 100%;
+    max-width: 260px;
+    text-align: center;
   }
 
+  .project-card,
+  .cert-card,
+  .activity-card {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .education-box {
+    padding: 24px;
+  }
 }
